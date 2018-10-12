@@ -64,49 +64,65 @@
 			.vid {
 				color: green;
 			}
-			div {
-				width: 100px;
-				height: 100px;
-				background-color: red;
-				position: relative;
-				-webkit-animation: myfirst 5s linear 2s infinite alternate; /* Safari 4.0 - 8.0 */
-				animation: myfirst 5s linear 2s infinite alternate;
-			}
-
-			/* Safari 4.0 - 8.0 */
-			@-webkit-keyframes myfirst {
-				0%   {background-color:red; left:0px; top:0px;}
-				25%  {background-color:yellow; left:200px; top:0px;}
-				50%  {background-color:blue; left:200px; top:200px;}
-				75%  {background-color:green; left:0px; top:200px;}
-				100% {background-color:red; left:0px; top:0px;}
-			}
-
-			/* Standard syntax */
-			@keyframes myfirst {
-				0%   {background-color:red; left:0px; top:0px;}
-				25%  {background-color:yellow; left:200px; top:0px;}
-				50%  {background-color:blue; left:200px; top:200px;}
-				75%  {background-color:green; left:0px; top:200px;}
-				100% {background-color:red; left:0px; top:0px;}
-			}
 			.float {
 				float: left;
 				margin: 0 15px 0 0;
 			}
+            .dropbtn {
+                background-color: rgb(168, 50, 50);
+                color: white;
+                padding: 16px;
+                font-size: 16px;
+                border: none;
+            }
+
+            /* The container <div> - needed to position the dropdown content */
+            .dropdown {
+                position: relative;
+                display: inline-block;
+            }
+
+            /* Dropdown Content (Hidden by Default) */
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #f1f1f1;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 1;
+            }
+
+            /* Links inside the dropdown */
+            .dropdown-content a {
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+
+            /* Change color of dropdown links on hover */
+            .dropdown-content a:hover {background-color: #ddd;}
+
+            /* Show the dropdown menu on hover */
+            .dropdown:hover .dropdown-content {display: block;}
+
+            /* Change the background color of the dropdown button when the dropdown content is shown */
+            .dropdown:hover .dropbtn {background-color: rgb(168, 50, 50);}
 		</style>
 	</head>
 	<body>
 		<h1 id = "title">Article <span id = "ColorChange">13</span></h1>
 		<h2 id = "sub-title">Why It Shouldn't Be Passed</h2>
-		<input type="text" name="search" placeholder="Search....................... syke this thing don't work!">
+		<input type="text" name="search" placeholder="Search.............................. syke this thing don't work!">
 		<h5><?php echo date('l, F jS, Y'); ?></h5>
-		<h3 id = "content">CONTENTS</h3>
-		<ol>
-			<li class = "Numbers"><a href = "indexs.html#Article">The Article</a></li>
-			<li class = "Numbers"><a href = "indexs.html#Memes">What Are Memes?</a></li>
-			<li class = "Numbers"><a href = "indexs.html#Reasons">Reasons</a></li>
-		</ol>
+		<div class="dropdown">
+          <button class="dropbtn">Contents</button>
+          <div class="dropdown-content">
+            <a href="indexs.html#Article">The Article</a>
+            <a href="indexs.html#Memes">What are Memes?</a>
+            <a href="indexs.html#Reasons">Reasons</a>
+          </div>
+        </div>
 		<h4 class = "Numbers"><marquee>#MemesAreLove</marquee></h4>
 		<h2 id = "content"><a name = "Article" id = "Article">The Article</a></h2>
 		
@@ -141,9 +157,8 @@
 		<iframe width="420" height="345" 
 		src="https://www.youtube.com/embed/tgbNymZ7vqY">
 		</iframe>
-		<div></div>
 		<script>
-			var slideIndex = 1;
+            var slideIndex = 1;
 			showDivs(slideIndex);
 
 			function plusDivs(n) {
