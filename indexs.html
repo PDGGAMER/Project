@@ -68,6 +68,14 @@
 				float: left;
 				margin: 0 15px 0 0;
 			}
+			.boxed {
+				width: 100px;
+				height: 300px;
+				font-size: 12px;
+				border: 1px solid rgb(168, 50, 50);
+				float: right;
+				margin: 0 0 0 0;
+			}
             .dropbtn {
                 background-color: rgb(168, 50, 50);
                 color: white;
@@ -75,13 +83,11 @@
                 font-size: 16px;
                 border: none;
             }
-
             /* The container <div> - needed to position the dropdown content */
             .dropdown {
                 position: relative;
                 display: inline-block;
             }
-
             /* Dropdown Content (Hidden by Default) */
             .dropdown-content {
                 display: none;
@@ -91,7 +97,6 @@
                 box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
                 z-index: 1;
             }
-
             /* Links inside the dropdown */
             .dropdown-content a {
                 color: black;
@@ -99,13 +104,10 @@
                 text-decoration: none;
                 display: block;
             }
-
             /* Change color of dropdown links on hover */
             .dropdown-content a:hover {background-color: #ddd;}
-
             /* Show the dropdown menu on hover */
             .dropdown:hover .dropdown-content {display: block;}
-
             /* Change the background color of the dropdown button when the dropdown content is shown */
             .dropdown:hover .dropbtn {background-color: rgb(168, 50, 50);}
 		</style>
@@ -144,7 +146,9 @@
 		<button class="w3-button w3-display-left" onclick= "plusSlides(-1)">&#10094;</button>
 		<button class="w3-button w3-display-right" onclick="plusSlides(+1)">&#10095;</button>
 		
-		<p class = "info">Meme<br>Noun<br>Plural noun: Memes<br>1. An element of a culture or system of behaviour passed from one individual to another by imitation or other non-genetic means.<br>2. An image, video, piece of text, etc., typically humorous in nature, that is copied and spread rapidly by Internet users, often with slight variations.</p>
+		<div class = "boxed">
+			<p class = "info">Meme<br>Noun<br>Plural noun: Memes<br>1. An element of a culture or system of behaviour passed from one individual to another by imitation or other non-genetic means.<br>2. An image, video, piece of text, etc., typically humorous in nature, that is copied and spread rapidly by Internet users, often with slight variations.</p>
+		</div>
 		<p class = "info">Memes can be clean(no swearing or sexual content) or they can not be clean. The unclean ones tend to be the funnier ones. Memes usually use different templates and themes. For instance, in Spooktober (October) memers start making memes about skeletons with trumpets. Some people don't actually use a template for a meme. Instead, they use something like this:<br><br><br><br>Using a template<br>*Drake Disapproves*<br>Describing meme with text<br>*Drake Approves*</p>
 		
 		<h2 id = "content"><a name = "Reasons" id = "Reasons">Reasons</a></h2>
@@ -160,11 +164,9 @@
 		<script>
             var slideIndex = 1;
 			showDivs(slideIndex);
-
 			function plusDivs(n) {
 				showDivs(slideIndex += n);
 			}
-
 			function showDivs(n) {
 				var i;
 				var x = document.getElementsByClassName("mySlides");
@@ -178,17 +180,14 @@
 			
 			var slideIndex = 1;
 			showSlides(slideIndex);
-
 			// Next/previous controls
 			function plusSlides(n) {
 			  showSlides(slideIndex += n);
 			}
-
 			// Thumbnail image controls
 			function currentSlide(n) {
 			  showSlides(slideIndex = n);
 			}
-
 			function showSlides(n) {
 			  var i;
 			  var slides = document.getElementsByClassName("mySlider");
